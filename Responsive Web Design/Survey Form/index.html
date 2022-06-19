@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type='text/css' href="styles.css" />
+    </head>
+    <body>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">A Developer Survey</p>
+        <form id="survey-form">
+            <label id="name-label"> Name<input id="name" type='text' required placeholder="Enter Your Name"></label>
+            <label id="email-label"> Email<input id="email" type='email' required placeholder="Enter Your Email"></label>
+            <label id="number-label"> Age<input id="age" type='number' min="0" max="100" placeholder="Enter Your Age"></label>
+            <label id="type-label"> Type of Developer<select id="dropdown">
+                <option value="">(select one)</option>
+                <option value="1">Front End</option>
+                <option value="2">Back End</option>
+                <option value="3">Full Stack</option>
+            </select></label>
+            <label id="education"> Enter Your Education Type
+                <label id="schooling-label"><input id='self-taught' type='radio' name="vocation">Self-Taught</label>
+                <label id="schooling-label"><input id='university' type='radio' name='vocation'>University</label>
+                <label id="schooling-label"><input id='bootcamp' type='radio' name='vocation'>Bootcamp</label>
+            </label>
+            <label id="lang">Backend language
+                <label id="lang-label"><input type="checkbox" name="javascript" value="1">JavaScript</label>
+                <label id="lang-label"><input type="checkbox" name="typescript" value="2">TypeScript</label>
+                <label id="lang-label"><input type="checkbox" name="php" value="3">PHP</label>
+                <label id="lang-label"><input type="checkbox" name="python" value="4">Python</label>
+            </label>
+            <label>
+                <textarea placeholder="Tell us about yourself"></textarea>
+            </label>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </body>
+</html>
