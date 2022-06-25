@@ -42,5 +42,10 @@ const contacts = [
       }
     }
   }
-  
-  lookUpProfile("Akira", "likes");
+
+  lookUpProfile("Kristian", "lastName")
+
+
+
+
+  console.log(lookUpProfile("Akira", "likes"));
