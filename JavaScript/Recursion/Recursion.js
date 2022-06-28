@@ -8,6 +8,8 @@ function sum(arr, n) {
   
   }
 
-sum([1], 0); // Should equal 0.
-sum([2, 3, 4], 1); // Should equal 2.
-sum([2, 3, 4, 5], 3); // Should equal 9
+console.log(sum([1], 0)); // Should equal 0.
+console.log(sum([2, 3, 4], 1)); // Should equal 2.
+console.log(sum([2, 3, 4, 5], 3)); // Should equal 9
+
+// This function uses recursion to add the first 'n' elements of the array passed in.
