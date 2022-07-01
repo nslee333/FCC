@@ -1,6 +1,38 @@
-const string1 = "JACK"; // /[A-Z+]/gi
-const string2 = "J"; // /[A-Z+]/gi
-const string3 = "Jo"; // False 
+
+/* 
+
+This is a small project to use regular expressions with javascript.
+
+    When a user is creating a username, he has to pass the following requirements 
+        for his username to be accepted.
+
+        1. The Usernames can only use alpha-numeric characters.
+        
+        2. The only numbers in the username have to be at the end.
+            2.1 There can be zero or more numbers at the end of the username.
+            2.2 Username cannot start with a number.
+        
+        3. Username letters can be lowercase and/or uppercase.
+        
+        4. Usernames have to be at least two characters long.
+            4.1 A two character username can only use alphabet letters as characters.
+
+    We have a bunch of strings to test to make sure our regex match works properly.
+
+    All of these strings are test cases for the above requirements. 
+    
+    We assign multiple result variables to each test case.
+
+    We then log the results (boolean value) and also log the result number and what it should equal.
+
+    To run this file all you have to do is point your terminal to the root directory 'Regex' and enter the command 'node usernameRegex.js'
+
+
+*/
+
+const string1 = "JACK";
+const string2 = "J"; 
+const string3 = "Jo"; 
 const string4 = "Oceans11";
 const string5 = "RegexGuru";
 const string6 = "007";
@@ -13,15 +45,21 @@ const string12 = "AB1";
 const string13 = "J%4";
 
 
-
-
-
-
-
-
 let username = "JackOfAllTrades";
 
-let userCheck = /[A-Z+a-z+0-9+]/gi; // Change this line
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+
+/* 
+
+I'm going to break down this regex
+
+
+
+
+
+
+*/
+
 let result0 = userCheck.test(username);
 let result1 = userCheck.test(string1);
 let result2 = userCheck.test(string2);
@@ -41,20 +79,20 @@ let result13 = userCheck.test(string13);
 
 
 
-console.log(result0, "username"); 
-console.log(result1, "string1" );
-console.log(result2, "string2" );
-console.log(result3, "string3" );
-console.log(result4, "string4" );
-console.log(result5, "string5" );
-console.log(result6, "string6" );
-console.log(result7, "string7" );
-console.log(result8, "string8" );
-console.log(result9, "string9" );
-console.log(result10, "string10" );
-console.log(result11, "string11" );
-console.log(result12, "string12" );
-console.log(result13, "string13" );
+console.log(result0, "username, should equal true"); 
+console.log(result1, "string1, should equal true" );
+console.log(result2, "string2, should equal false" );
+console.log(result3, "string3, should equal true" );
+console.log(result4, "string4, should equal true" );
+console.log(result5, "string5, should equal true" );
+console.log(result6, "string6, should equal false" );
+console.log(result7, "string7, should equal false" );
+console.log(result8, "string8, should equal false" );
+console.log(result9, "string9, should equal false" );
+console.log(result10, "string10, should equal true" );
+console.log(result11, "string11, should equal false" );
+console.log(result12, "string12, should equal true" );
+console.log(result13, "string13, should equal false" );
 
 
 
