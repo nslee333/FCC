@@ -22,10 +22,10 @@ let result6 = string6.match(reRegex);
 let result7 = string7.match(reRegex);
 
 
-console.log(result1, "(string1, should equal a match)" );
-console.log(result2, "(string2, should equal a match)" );
-console.log(result3, "(string3, should equal null)" );
-console.log(result4, "(string4, should equal null)" );
-console.log(result5, "(string5, should equal null)" );
-console.log(result6, "(string6, should equal null)" );
+console.log(result1, "(string1, should equal a match)");
+console.log(result2, "(string2, should equal a match)");
+console.log(result3, "(string3, should equal null)");
+console.log(result4, "(string4, should equal null)");
+console.log(result5, "(string5, should equal null)");
+console.log(result6, "(string6, should equal null)");
 console.log(result7, "(string7, should equal a match)");
