@@ -28,9 +28,4 @@ function mutation(arr) {
 
     - If we get to the end of the array, and the first condition hasn't been triggered, then we return true.
 
-    
-
-
-
-
 */
