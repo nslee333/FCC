@@ -20,8 +20,6 @@ function remove(bookList, bookName) {
   bookList.forEach(element => newBookList.push(element));
 
   
-  
-  
   const book_index = newBookList.indexOf(bookName);
   if (book_index >= 0) {
 

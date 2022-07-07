@@ -32,5 +32,4 @@ It takes in a callback function, for each element in an array that .filter is ca
     is equal to true, if so, it pushes the element to a new array which is returned to the caller.
 
 
-
 */
