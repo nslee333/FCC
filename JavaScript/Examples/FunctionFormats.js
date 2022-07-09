@@ -34,3 +34,5 @@ const arrowFunctionV2 = () => {
 const arrowFunctionV3 = () => "value";
 
 // This will return the string 'value' by default.
+
+const arrowFunctionV4 = () => "hello";
