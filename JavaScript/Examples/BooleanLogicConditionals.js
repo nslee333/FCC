@@ -51,3 +51,13 @@ function isEqualIf(a, b) {
         return false;
     }
 }
+
+function findGreater(a, b) {
+    return a < b ? "A is greater": "B is greater or equal";
+}
+
+function findGreaterOrEqual(a, b) {
+    return (a === b) ? "A and B are equal"
+    : (a > b) ? "A is greater"
+    : "B is greater";
+}
