@@ -19,30 +19,6 @@ function tradFun1(num) {
 
 tradFun1();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const arrowFunction = function() {
     console.log("Hello World!");
 }
@@ -56,3 +32,24 @@ const arrowFunctionV2 = () => {
 
 const arrowFunctionV3 = () => "value";
 
+const doubler = (item) => item * 2;
+
+const doubler2 = item => item * 2;
+
+const multiplier = (item, multi) => item * multi;
+
+multiplier(4,2);
+
+const greeting = (name = "Anonymous") => "Hello" + name;
+
+console.log(greeting("John"));
+console.log(greeting());
+
+
+
+function howMany(...args) {
+    return "You have passed" + args.length +  " arguments.";
+}
+
+console.log(howMany(0, 1, 2));
+console.log(howMany("string", null, [1, 2, 3], { }));

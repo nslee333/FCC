@@ -95,3 +95,11 @@ let obj = {
 };
 
 Object.freeze(obj);
+
+
+const user = {name: "John Dutton", age: "55"};
+
+const name = user.name;
+const age = user.age;
+
+const {name1, age2} = user;
