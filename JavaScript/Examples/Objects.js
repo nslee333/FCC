@@ -88,3 +88,10 @@ const ourStorage = {
 ourStorage.cabinet["top drawer"].folder2;
 ourStorage.desk.drawer;
 
+
+let obj = {
+    name: "freeCodeCamp",
+    review: "awesome"
+};
+
+Object.freeze(obj);
