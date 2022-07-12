@@ -97,9 +97,27 @@ let obj = {
 Object.freeze(obj);
 
 
-const user = {name: "John Dutton", age: "55"};
+const user = {name: "John Dutton", age: 55};
 
 const name = user.name;
 const age = user.age;
 
 const {name1, age2} = user;
+
+
+const user2 = { name: "John Dutton", age: 55};
+
+const {name: userName, age: userAge} = user;
+
+const user3 = {
+    johnDoe: {
+        age: 55,
+        email: 'jd@fcc.com'
+    }
+};
+
+const { johnDoe: { age, email}} = user3;
+
+const { johnDoe: { age: userAge, email: userEmail }} = user3;
+
+
