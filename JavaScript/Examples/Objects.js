@@ -102,7 +102,7 @@ const user = {name: "John Dutton", age: 55};
 const name = user.name;
 const age = user.age;
 
-const {name1, age2} = user;
+const {name1, age3} = user;
 
 
 const user2 = { name: "John Dutton", age: 55};
@@ -116,8 +116,27 @@ const user3 = {
     }
 };
 
-const { johnDoe: { age, email}} = user3;
+const { johnDoe: { age2, email}} = user3;
 
-const { johnDoe: { age: userAge, email: userEmail }} = user3;
+const { johnDoe: { age: userAge2, email: userEmail }} = user3;
 
+
+const profileUpdate = (profileData) => {
+    const {name, age, nationality, location } = profileData;
+}
+
+const profileUpdate2 = ({name, age, nationality, location}) => {
+
+}
+
+
+const person = {
+    name: "Kayce Dutton",
+    age: 32
+};
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old`;
+
+console.log(greeting);
 
