@@ -19,3 +19,11 @@ const myPromise2 = new Promise((resolve, reject) => {
         reject("Promise was rejected");
     }
 });
+
+myPromise2.then(result => {
+
+});
+
+myPromise2.catch(error => {
+
+});
