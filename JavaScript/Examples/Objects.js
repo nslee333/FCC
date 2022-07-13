@@ -140,3 +140,55 @@ I am ${person.age} years old`;
 
 console.log(greeting);
 
+const getMousePosition = (x, y) = ({
+    x: x,
+    y: y
+});
+
+const getMousePosition2 = (x, y) => ({x, y});
+
+const person2 = {
+    name: "Sabrina",
+    sayHello: function() {
+        return `Hello! My name is ${this.name}.`;
+    }
+};
+
+const person3 = {
+    name: "Taylor",
+    sayHello() {
+        return `Hello! My name is ${this.name}.`;
+    }
+}
+
+var spaceShuttle = function(targetPlanet){
+    this.targetPlanet = targetPlanet;
+}
+var zeus = new spaceShuttle('Jupiter');
+
+class SpaceShuttle {
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+const mars = new SpaceShuttle("Mars");
+
+class Book{
+    constructor(author) {
+        this._author = author;
+    }
+
+    get writer() {
+        return this._author;
+    }
+
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor;
+    }
+}
+
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
+
