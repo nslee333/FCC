@@ -62,3 +62,16 @@ let password = "abc123";
 let checkPass = /(?=\w{3,6})(?=\D*\d)/;
 
 let repeatStr = "row row row your boat";
+
+
+let repeatRegex2 = /(\w+) \1 \1/;
+repeatRegex2.test(repeatStr); 
+repeatStr.match(repeatRegex); 
+
+
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+
+
+"Code Camp".replace(/(\w+)\s(\w+)/, "$2 $1");

@@ -30,5 +30,15 @@ const [a3, b4, ...arr] = [1, 2, 3, 4, 5, 7];
 console.log(a, b);
 console.log(arr);
 
+// Basic data structure curriculum  here down.
+
+let array = ["today", "was", "not", "so", "great"];
+array.splice(2, 2);
+
+let array2 = ["today", "was", "great"];
+
+let array3 = ["I", "am", "feeling", "really", "happy"];
+let newArray = array.splice(3,2);
+
 
 
