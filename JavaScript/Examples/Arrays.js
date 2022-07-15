@@ -66,4 +66,37 @@ let thatArray2 = ['basil', 'cilantro', ...thisArray2, 'coriander'];
 
 thatArray = ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']
 
-let fruits = []
+let fruits = ["apples", "pears", "oranges", "peaches", "pears"];
+fruits.indexOf("dates");
+fruits.indexOf("oranges");
+fruits.indexOf("pears");
+
+
+function greaterThanTen(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
+
+let nestedArray = [
+    ['deep'],
+    [
+        ['deeper'], ['deeper']
+    ],
+    [
+        [
+            ['deepest'], ['deepest']
+        ],
+        [
+            [
+                ['deepest-est?']
+            ]
+        ]
+    ]
+];
