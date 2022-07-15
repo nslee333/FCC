@@ -25,8 +25,10 @@ function fearNotLetter(str) {
   For each element in the string:
     - Let code be the char code of the current iteration.
     - If code does not equal the char code of the first position plus iterations,
-        return 
-
+        (Something to note here, I think we have a difference between code and str.charCodeAt(0) + iterations because if we don't the conditional check wouldn't do 
+            anything.)
+        return String converted from sequence of UTF-16 code units (code - 1).
+            - If the current character doesn't work, go back one and return that.
 
   
   */
