@@ -40,5 +40,30 @@ let array2 = ["today", "was", "great"];
 let array3 = ["I", "am", "feeling", "really", "happy"];
 let newArray = array.splice(3,2);
 
+let newArray2 = ["really", "happy"];
+
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+
+numbers.splice((startIndex, amountToDelete, 13, 14));
+console.log(numbers);
+
+let numbers2 = [10, 11, 12, 13, 14, 15];
 
 
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3);
+
+todaysWeather = ['snow', 'sleet'];
+
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];
+
+let thisArray2 = ['sage', 'rosemary', 'parsley', 'thyme'];
+
+let thatArray2 = ['basil', 'cilantro', ...thisArray2, 'coriander'];
+
+thatArray = ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']
+
+let fruits = []
