@@ -218,3 +218,65 @@ nestedObject.data.onlineStatus.busy = 10;
 for (let user in users) {
     console.log(user);
 }
+
+let duck = {
+    name: "Aflac",
+    numLegs: 2,
+    sayName: function() {return "The name of the duck is " + duck.name + ".";}
+}
+duck.sayName();
+
+function Bird() {
+    this.name = "Albert";
+    this.color = "blue";
+    this.numLegs = 2;
+}
+
+let blueBird = new Bird();
+
+
+function Bird(name, color) {
+    this.name = name;
+    this.color = color;
+    this.numLegs = 2;
+}
+let baldy = new Bird("eagle", "white");
+
+let Bird = function(name, color){
+    this.name = name;
+    this.color = color;
+    this.numLegs = 2;
+}
+
+let crow = new Bird("Alexis", "black");
+
+crow instanceof Bird;
+
+Bird.prototype.numLegs = 2;
+
+
+let duck2 = new Bird();
+let beagle2 = new Dog();
+
+console.log(duck.constructor === Bird);
+console.log(beagle.constructor === Dog);
+
+
+Bird.prototype = {
+    constructor: Bird,
+    numLegs: 2,
+    eat: function() {
+        console.log("Nom nom nom");
+    },
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+function Bird(name) {
+    this.name = name;
+}
+
+let duck2 = new Bird("Donald");
+
+Bird.prototype.isPrototypeOf(duck);
