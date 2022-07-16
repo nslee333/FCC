@@ -277,6 +277,161 @@ function Bird(name) {
     this.name = name;
 }
 
-let duck2 = new Bird("Donald");
+let duck3 = new Bird("Donald");
 
 Bird.prototype.isPrototypeOf(duck);
+
+function Bird(name) {
+    this.name = name;
+}
+typeof Bird.prototype;
+
+Object.prototype.isPrototypeOf(Bird.prototype);
+
+
+Bird.prototype = {
+    constructor: Bird,
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+Dog.prototype = {
+    constructor: Dog,
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+function Animal() {};
+
+Animal.prototype = {
+    constructor: Animal,
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+Bird.prototype = {
+    constructor: Bird
+};
+
+Dog.prototype = {
+    constructor: Dog
+};
+
+let animal = Object.create(Animal.prototype);
+
+let animal2= new Animal();
+
+Bird.prototype = Object.create(Animal.prototype);
+
+function Bird() {}
+Bird.prototype = Object.create(Animal.prototype);
+let duck4 = new Bird();
+duck4.constructor
+
+Bird.prototype.constructor = Bird;
+duck4.constructor
+
+function Animal() {};
+Animal.prototype.eat = function() {
+    console.log("Nom nom nom");
+};
+function Bird() {};
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+Bird.prototype.fly = function() {
+    console.log("I'm flying!");
+}
+
+let duck5 = new Bird();
+duck5.eat();
+duck5.fly();
+
+ChildObject.prototype = Object.create(ParentObject.prototype);
+
+ChildObject.prototype.methodName = function() {};
+
+function Animal() {};
+Animal.prototype.eat = function() {
+    return "nom, nom, nom";
+}
+
+function Bird() {};
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.eat = function() {
+    return "peck peck peck";
+}
+
+
+let flyMixin = function(obj) {
+    obj.fly = function() {
+        console.log("Flying, woosh!");
+    }
+};
+
+let bird = {
+    name: "Donald",
+    numLegs: 2
+};
+
+let plane = {
+    model: "777",
+    numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+function Bird() {
+    let hatchedEgg = 10;
+    
+    this.getHatchedEggCount = function() {
+        return hatchedEgg;
+    };
+}
+
+let ducky = new Bird();
+ducky.getHatchedEggCount();
+
+(function() {
+    console.log("Chirp, Chirp!");
+})();
+
+
+function glideMixin(obj) {
+    obj.glide = function() {
+        console.log("Gliding on the water");
+    }
+};
+
+
+let flyMixin2 = function(obj) {
+    obj.fly = function() {
+        console.log("Flying, woosh!");
+    }
+};
+
+let motionModule = (function () {
+    return {
+        glideMixin: function(obj) {
+            obj.glide = function() {
+                console.log("Gliding on the water");
+            };
+        },
+        
+        
+        flyMixin2: function(obj) {
+            obj.fly = function() {
+                console.log("Flying, woosh!");
+            };
+        },
+    }
+}) ();
+
+motionModule.glideMixin(duck);
+duck.glide();
