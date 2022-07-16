@@ -53,3 +53,43 @@ function howMany(...args) {
 
 console.log(howMany(0, 1, 2));
 console.log(howMany("string", null, [1, 2, 3], { }));
+
+
+(function() {
+    console.log("Chirp, Chirp!");
+})();
+
+
+function glideMixin(obj) {
+    obj.glide = function() {
+        console.log("Gliding on the water");
+    }
+};
+
+
+let flyMixin2 = function(obj) {
+    obj.fly = function() {
+        console.log("Flying, woosh!");
+    }
+};
+
+let motionModule = (function () {
+    return {
+        glideMixin: function(obj) {
+            obj.glide = function() {
+                console.log("Gliding on the water");
+            };
+        },
+        
+        
+        flyMixin2: function(obj) {
+            obj.fly = function() {
+                console.log("Flying, woosh!");
+            };
+        },
+    }
+}) ();
+
+motionModule.glideMixin(duck);
+duck.glide();
+

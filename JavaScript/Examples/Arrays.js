@@ -100,3 +100,26 @@ let nestedArray = [
         ]
     ]
 ];
+
+const users = [
+    { name: "john", age: 34},
+    { name: "Amy", age: 20},
+    { name: 'CamperCat', age: 10}
+];
+
+const names = users.map(user => user.name);
+console.log(names);
+
+const users2 = [
+    { name: "john", age: 34},
+    { name: "Amy", age: 20},
+    { name: 'CamperCat', age: 10}
+]
+
+const usersUnder30 = users2.filter(user => user.age < 30);
+console.log(usersUnder30);
+
+[1, 2, 3].concat([4, 5, 6]);
+
+const array4 = [1, 2, 3];
+array4.push([4, 5, 6])
