@@ -123,3 +123,52 @@ console.log(usersUnder30);
 
 const array4 = [1, 2, 3];
 array4.push([4, 5, 6])
+
+const users3 = [
+    { name: "john", age: 34},
+    { name: "Amy", age: 20},
+    { name: 'CamperCat', age: 10}
+];
+
+const sumOfAges = users3.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges);
+
+
+const sumWithInitial = array1.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+
+
+const users4 = [
+    { name: "john", age: 34},
+    { name: "Amy", age: 20},
+    { name: 'CamperCat', age: 10}
+];
+
+const usersObj = users.reduce((obj, user) => {
+    obj[userName] = user.age;
+    return obj;
+}, {});
+console.log(usersObj);
+
+function ascendingOrder(arr) {
+    return arr.sort(function(a, b){
+        return a - b;
+    });
+}
+
+ascendingOrder([1, 5, 2, 3, 4]);
+
+function reverseAlpha(arr) {
+    return arr.sort(function(a, b){
+        return a === b? 0: a < b ? a : -1;
+    });
+}
+
+reverseAlpha(['l', 'h', 'z', 'b', 's']);
+
+const numbers3 = [1, 5, 8, 0, 10, 11];
+
+numbers3.every(function(currentValue) {
+    return currentValue < 10;
+});
+
+
