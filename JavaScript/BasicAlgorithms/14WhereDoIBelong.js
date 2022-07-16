@@ -3,7 +3,6 @@ function getIndexToIns(arr, num) {
     // Sort the array from lowest to highest.
     arr.sort((a, b) => a - b);
     
-    
     // loop through the array until you find the position that the number can be inserted into.
     let numValue = 0;
     for (let i = 0; i < arr.length; i++) {
