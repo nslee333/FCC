@@ -1,43 +1,29 @@
-function helperI(string) {
-    if(string === "1") {
-      return "I";
-    } else if (string === "2") {
-      return "II";
-    } else if (string === "3") {
-      return "III";
-    } else if (string === "4") {
-      return "IV";
-    } else if (string === "5"){
-      return "V";
-    } else if (string === "6"){
-      return "VI";
-    } else if (string === "7"){
-      return "VII";
-    } else if (string === "8"){
-      return "VIII";
-    } else if (string === "9"){
-      return "IX";
-    }
-  function helper2
+function convertToRoman(numToConvert) {
 
+    const numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
 
+    let result = "";
 
-console.log(string, string.length - 1);
-  
+    numbers.forEach(function(number, i) {
+        while (numToConvert >= number) {
+            result += roman[i];
+            numToConvert -= number;
+        }
+    });
 
-  let resultString = "";
-  
-  if(num > 1000) {
-    string += "M";
-  } else if (num > 900) {
-    string += "CM";
-  } else if (num > 500)
-
-
-  return string;
-  
-  
-  
-  for(let i = string.length -1 ; i > 0; i-- ) {
+    return result;
 
 }
+
+
+console.log(convertToRoman(1900));
+
+
+
+/*
+
+This function takes in an arabic numeral and converts it to a roman numeral and returns it to the caller.
+
+
+*/
