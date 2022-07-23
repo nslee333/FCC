@@ -30,50 +30,44 @@ function rot13(str) {
     
       } else {
 
-        if(str[i] >= 12) {
+            if(value > 12) {
 
-            let temp = str[i] - 25;
-            let result = arr[temp];
-            string += result;
+                let temp = value - 13;
+                let result = arr[temp];
+                
+                string += result;
 
-        } else {
-            
-            let result = arr[value + 13];
-            string += result;
+            } else {
+                
+                let result = arr[value + 13];
+                string += result;
 
+            }
         }
-
-        }
-    //     console.log(string);
-      return string;
     }
 
+    return string;
 }
-    
-    
-    console.log(rot13("SERR PBQR PNZC"));
-    console.log(rot13("SERR CVMMN!"));
-    console.log(rot13("SERR YBIR?"), "marsh");
-    console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."), "marsh");
+
+console.log(rot13("SERR PBQR PNZC!?."));
+console.log(rot13("SERR CVMMN!"));
+console.log(rot13("SERR YBIR?"));
+console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
 
 
 
 
 
     /*
-    
-    This function is a Caesar Cipher Decoder.
 
-    Also known as a Shift Cipher, the strings are encoded using ROT13, which means that the letters have been encoded by shifting the values 13 places over.
+    Alright this is my second version of the Caesar Cipher.
 
-    One of the hurdles here is that if the letter to be converted is at the end of the alphabet array, then how do we shift 13 places forward?
-        - I solved this problem by including the first half of the alphabet at the end of the alphabet array.
-            - 1/2 because 13 positions from Z ( N ) is the farthest position that that it can possibly go to with ROT13.
+    This second version differs on how it finds the decoded value of a character, if the index is larger than 12.
+        ( if we just added 13 to an index with the value of 13( or above ), it would give us undefined, because 13 + 13(+) would equal 26 (+), which is larger than the array length.)
 
-        I think that they're a more elegant solution to this problem so I'm going to see if I can find it.
+        I just defined a traditional alphabet, A-Z 
+            To find a decoded value of a character with an index larger than 12, I would subtract 13 from the index, to get the decoded value position.
 
-
-    
-    
-    
+        Also, at line 33, value has to be greater than 12, (13 and above) and not greater than or equal to 12, because if we did, Z would be undefined, since
+            12 - 13 would equal index position of -1, which is undefined.
     */
