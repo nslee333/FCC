@@ -26,3 +26,10 @@ function sumPrimes(num) {
 
 
     
+/*
+
+This function takes a number, and returns the sum of all the prime numbers up to that number.
+
+
+
+*/

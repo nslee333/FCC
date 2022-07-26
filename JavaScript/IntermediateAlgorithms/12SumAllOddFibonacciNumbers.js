@@ -22,3 +22,16 @@ function sumFibs(num) {
   }
   
   console.log(sumFibs(10));
+
+
+
+
+  /*
+  
+This function takes in a number, and returns the sum off all the fibonacci numbers starting from zero up to the number passed in.
+
+
+  
+  
+  
+  */

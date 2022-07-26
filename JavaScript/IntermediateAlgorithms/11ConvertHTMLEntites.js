@@ -16,3 +16,10 @@ function convertHTML(str) {
   
   convertHTML("Dolce & Gabbana");
 
+/*
+
+This function takes in a string, if it sees a special character, it will convert it to the html entity.
+
+
+
+*/
