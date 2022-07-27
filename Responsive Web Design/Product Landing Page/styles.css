@@ -11,24 +11,12 @@
     display: flex;
     content-align: center;
 }
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #cc0000;
-  color: white;
-  font-family: 'Exo 2', sans-serif;
-  padding: 1em;
+.header {
+margin: none;
+
 }
 
 .nav-bar {
     margin-top: 1%;
     
-}
-
-@media only screen and (max-width: 600px) {
-  * {
-    background-color: lightblue;
-  }
 }
