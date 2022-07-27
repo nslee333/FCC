@@ -2,27 +2,33 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <link rel="stylesheet" href="./styles.css"/>
 
     </head>
-    <main id="main-doc">
-
-        <div id="navbar" class="side-nav">
-            <h1>JavaScript Documentation</h1>
-            <a href="#intro">JS Introduction</a>
-            <a href="#javascript_java">Javascript and Java</a>
-            <a href="#hello_world">Hello World</a>
-            <a href="#variables">Variables</a>
-            <a href="#declaring_variables">Declaring Variables</a>
-            <a href="#data_types">Data Types</a>
-        </div>
-        
-        
-        
-        <section class="main-section" id="intro">
+    <body>
+        <nav id="navbar">
+            <header>JavaScript Documentation</header>
             
-            <h1 id="js_intro">Javascript Introduction</h1>
+                <a href="#javascript_introduction" class='nav-link'>javascript introduction</a>
+            
+                <a href="#javascript_and_java" class='nav-link'>javascript and java</a>
+            
+                <a href="#hello_world" class='nav-link'>hello world</a>
+            
+                <a href="#variables" class='nav-link'>variables</a>
+            
+                <a href="#declaring_variables" class='nav-link'>declaring variables</a>
+            
+                <a href="#data_types" class='nav-link'>data types</a>
+            
+        </nav>
+        
+        <main id="main-doc">
+        
+        <section class="main-section" id="javascript_introduction">
+            
+            <header>javascript introduction</header>
 
             <p>JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.</p>
 
@@ -38,8 +44,8 @@
 
 
 
-        <section class="main-section" id="#Javasript_and_Java">
-            <h2 id="javascript_java">Javascript and Java</h2>
+        <section class="main-section" id="javasript_and_java">
+            <header>javascript and java</header>
 
             <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
             <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
@@ -47,8 +53,8 @@
 
         </section>
 
-        <section class="main-section" id="#Hello_World">
-            <h2 id="hello_world">Hello World</h2>
+        <section class="main-section" id="hello_world">
+            <header>hello world</header>
             <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
             <code>
                 "function greetMe(yourName) { alert("Hello " + yourName); }
@@ -58,8 +64,8 @@
         </section>
 
 
-        <section class="main-section" id="Variables">
-            <h2 id="variables">Variables</h2>
+        <section class="main-section" id="variables">
+            <header id="variables">Variables</header>
             <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
             <p>A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
             <p>You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number_hits, temp99, and _name.</p>
@@ -67,8 +73,8 @@
         </section>
 
 
-        <section class="main-section" id="#Declaring_Variables">
-            <h2 id="declaring_variables">Declaring Variables</h2>
+        <section class="main-section" id="declaring_variables">
+            <header>declaring variables</header>
                 <p>You can declare a variable in three ways:</p>
                 <p>With the keyword var. For example,</p>
                     <code>var x = 42;</code>
@@ -82,8 +88,8 @@
                 <p>This syntax can be used to declare a block scope local variable. See Variable scope below.</p>
         </section>
 
-        <section class="main-section" id="#data_types">
-            <h2 id="data_types">Data Types</h2>
+        <section class="main-section" id="data_types">
+            <header>data types</header>
             <p>The latest ECMAScript standard defines seven data types:</p>
             <li>Six data types that are primitives:</li>
                 <ul>
@@ -100,6 +106,7 @@
 
 
     </main>
-
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
 
 </html>
