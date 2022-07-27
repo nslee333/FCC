@@ -13,8 +13,12 @@ main {
     
 }
 
+.side-nav h1 {
+    font-size: 35px;
+}
 
-navbar {
+
+.side-nav {
     font-size: 15px;
     margin-left: 5px;
     height: 100%;
@@ -34,4 +38,10 @@ navbar {
 .side-nav div {
     border-top: 1px solid black;
     border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    background-color: lightblue;
+  }
 }
