@@ -1,0 +1,439 @@
+<style>
+    /* *{
+        background-color: lightgray;
+    } */
+
+
+
+
+    body {
+      font-family: sans-serif;
+      font-size: 75%;
+      margin:5% 0;
+      padding:10px 0 0 0;
+      overflow:hidden;
+    }
+  
+    h1, h2, h3, h4 {
+      margin: 5px 0px;
+      padding: 0px;
+      text-transform:capitalize;
+    }
+  
+    dt { float: left; }
+  
+    table#legend {
+      background-color:#F6F6F6;
+      box-sizing:border-box;
+      clear: both;
+      margin-top:10px;
+      padding:10px;
+      width: 100%;
+    }
+  
+    .note {
+      font-style:italic;
+      color:#666;
+      font-weight:lighter;
+      width:150px;
+    }
+  
+    .cover-page {
+      font-size:20px;
+      text-align:center;
+    }
+  
+    ol.streets {
+      color:#333;
+      display:inline-block;
+      float:left;
+      font-size:16px;
+      list-style-position: inside;
+      margin:0 5% 0 0;
+      padding:0;
+      text-transform:capitalize;
+    }
+  
+    ol.streets li {
+      background-color:#333;
+      color:#FFF;
+      margin-top:0;
+      margin-bottom:3px;
+      padding:3px;
+      page-break-inside:avoid;
+      text-align:left;
+    }
+  
+    .street-label {
+      display:inline-block;
+      margin-top:15px;
+      border-top:1px solid #666;
+      border-bottom:1px solid #CCC;
+      text-transform:capitalize;
+    }
+  
+    .listings .street h1, .listings .street h2 {
+      text-align: left !important;
+      margin-left:10px !important;
+    }
+  
+    div.listings {
+      box-sizing:border-box;
+      display:block;
+    }
+  
+    #map {
+      float:right;
+      width:70%;
+    }
+  
+    table {
+      font-size:14px;
+    }
+  
+    table.listing {
+      width:100%;
+      font-size:14px;
+      border-collapse:collapse;
+    }
+  
+    table.listing:nth-child(odd) {
+      background-color:#F6F6F6;
+    }
+  
+    table.listing ul {
+      padding-left:0;
+      list-style-type:circle;
+    }
+  
+    table.listing ul li {
+      display:inline-block;
+      list-style:none;
+      vertical-align:top;
+    }
+  
+    table.listing > tbody tr td {
+      vertical-align:top;
+      padding:0.001%;
+      margin: 0.01px;
+      border-top:2px solid #666;
+    }
+  
+    table.listing.same-address > tbody tr td {
+      border-top-style:dashed;
+    }
+  
+    table.listing:first-child > tbody tr td {
+      border-top:none;
+    }
+  
+    table.listing .address {
+      margin:14px 0;
+      font-style:italic;
+      text-transform:capitalize;
+    }
+  
+    table.listing .blocks {
+      margin-bottom:10px;
+    }
+  
+    table.fill-in-fields {
+      width:100%;
+    }
+  
+    table.fill-in-fields td {
+      padding-bottom:10px;
+      vertical-align:middle;
+      border-top:none !important;
+    }
+  
+    table.fill-in-fields td:nth-child(even) {
+      border-bottom:1px solid #333;
+      width:4cm;
+    }
+  
+    ul.results li {
+      background-color:#CCC;
+      padding:1px;
+      margin-bottom:3px;
+    }
+  
+    .data-box {
+      display:inline-block;
+      margin-right:3px;
+      padding:1px 3px;
+      color:#FFF;
+      background-color:#666;
+    }
+  
+    .data-box .value {
+      font-weight:bold;
+    }
+  
+    .line-break {
+      height:1px;
+      background-color:#CCC;
+      margin:5px 0;
+    }
+  
+    .dont-break {
+      page-break-inside:avoid;
+    }
+  
+    .dont-break-after {
+      page-break-after:avoid;
+    }
+  
+    .break-after {
+      page-break-after:always;
+    }
+  
+    .break-if-needed {
+      page-break-after:auto;
+    }
+  
+  .clearfix:before,
+  .clearfix:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+  
+  .clearfix:after {
+      clear: both;
+  }
+  
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  .clearfix {
+      *zoom: 1;
+  }
+  
+  </style>
+  
+  <html>
+    <head></head>
+    <body>
+      <div class="cover-page break-after">
+        <h1>{{list.name}}</h1>
+        <p>{{list.description}}</p>
+  
+        <div>
+          <div style="width:20%">
+            <ol type="A" class="streets">
+              {% for address in list.addresses_by_street limit:20 %}
+                <li>{{address.street}}</li>
+              {% endfor %}
+            </ol>
+            {% if list.addresses_by_street.length > 20 %}
+              <p style="color: red;">Showing the first 20 streets</p>
+            {% endif %}
+          </div>
+  
+          {{list.map}}
+  
+          <div class="line-break"></div>
+        </div>
+  
+        <table id="legend">
+          <tr>
+            <td>
+              <h4>Phone</h4>
+              <dl>
+                <dt>w</dt><dd>Work</dd>
+                <dt>m</dt><dd>Mobile cell</dd>
+              </dl>
+              <span class="note">If a phone number is crossed out then that person is on the 'do not call' list</span>
+            </td>
+  
+            <td>
+              <h4>Party</h4>
+              <dl>
+                {% for party in settings.parties %}
+                  <dt>{{party.code}}</dt><dd>{{party.name}}</dd>
+                {% endfor %}
+              </dl>
+            </td>
+  
+            <td>
+              <h4>Vote</h4>
+              <dl>
+                <dt>E</dt><dd>Early</dd>
+                <dt>M</dt><dd>Mail</dd>
+                <dt>A</dt><dd>Absentee</dd>
+                <dt>N</dt><dd>Not</dd>
+              </dl>
+            </td>
+  
+            <td>
+              <h4>Results</h4>
+              <dl>
+                <dt>NH</dt><dd>Not home</dd>
+                <dt>REF</dt><dd>Refused</dd>
+                <dt>INAC</dt><dd>Inaccessible</dd>
+                <dt>MVD</dt><dd>Moved</dd>
+                <dt>DEC</dt><dd>Deceased</dd>
+                <dt>LANG</dt><dd>Language</dd>
+              </dl>
+            </td>
+  
+            <td id="demographics">
+              <h4>Demographics</h4>
+              <dl>
+                {% for demo in settings.demos %}
+                  <dt>{{demo.code}}</dt><dd>{{demo.name}}</dd>
+                {% endfor %}
+              </dl>
+            </td>
+  
+            <div class="clearfix"></div>
+          </tr>
+        </table>
+  
+        <div class="line-break"></div>
+      </div>
+  
+  
+      <div class="listings">
+        {% for sheet in sheets %}
+          <div class="dont-break {% if theme.each_group_own_page %}{% unless forloop.last %}break-after{% endunless %}{% endif %}">
+            <div class="street-label dont-break-after">
+              <h1>{{sheet.key}}</h1>
+            </div>
+  
+            {% for signup in sheet.signups %}
+              <table class="dont-break listing {% if last_address == signup.address.one_line %}same-address{% endif %}">
+                <tr>
+                  <td>
+                    <h3>{{signup.name_or_email}}</h3>
+  
+                    <div class="address">
+                      {{signup.address.one_line}}
+                    </div>
+  
+                    <div class="blocks">
+                      {% if signup.age %}
+                        <span class="data-box">Age: <span class="value">{{signup.age}}</span></span>
+                      {% endif %}
+  
+                      {% if signup.sex %}
+                        <span class="data-box">Sex: <span class="value"></span>{{signup.sex}}</span>
+                      {% endif %}
+  
+                      {% if signup.party %}
+                        <span class="data-box">Party: <span class="value"></span>{{signup.party}}</span>
+                      {% endif %}
+                      
+
+                      
+                    </div>
+  
+                    {% if signup.precinct_code %}
+                      <!-- Voter precinct -->
+                        <div class="precinct padbottom">
+                          <strong>Precinct: {{signup.precinct_code}}</strong>
+                        </div>
+                    {% endif %}
+  
+                    <!-- Phone numbers -->
+                    <div>
+                      {% if signup.phone %}
+                        <strong>Phone</strong>: {{signup.phone_format}}
+                      {% endif %}
+  
+                      {% if signup.work_phone_number %}
+                        <strong>Work</strong>: {{signup.work_phone_format}}
+                      {% endif %}
+  
+                      {% if signup.mobile_number %}
+                        <strong>Mobile</strong>: {{signup.mobile_format}}
+                      {% endif %}
+                    </div>
+  
+                    <!-- Demographic -->
+                    {% if signup.demo_name %}
+                      <div>
+                        <strong>Demo</strong>: {{signup.demo_name}}
+                      </div>
+                    {% endif %}
+  
+                    <div class="nb-id">
+                      <strong>NB ID:</strong> {{signup.id}}
+                    </div>
+                  </td>
+  
+                  <td>
+                    <h4>Results</h4>
+                    <ul class="results">
+                      <li>NH</li>
+                      <li>REF</li>
+                      <li>INAC</li>
+                      <li>MVD</li>
+                      <li>DEC</li>
+                      <li>LANG</li>
+                    </ul>
+                  </td>
+  
+                  <td>
+                    <h4>Support level</h4>
+                    <ul>
+                      <li>1</li>
+                      <li>2</li>
+                      <li>3</li>
+                      <li>4</li>
+                      <li>5</li>
+                    </ul>
+                  </td>
+  
+                  <td>
+                    <h4>Vote</h4>
+                    <ul>
+                      <li>E</li>
+                      <li>M</li>
+                      <li>A</li>
+                      <li>N</li>
+                    </ul>
+                  </td>
+  
+                  <td>
+                    <h4>Previous</h4>
+                    <p>{{signup.support_level}}</p>
+                  </td>
+  
+                  <td class="results">
+                    <table class="fill-in-fields">
+                      <tr>
+                        <td>
+                          Vol?
+                        </td>
+                        <td>Yes&nbsp;&nbsp;&nbsp;No</td>
+                        
+                      </tr>
+  
+                      <tr>
+                        <td>Email</td>
+                        <td></td>
+                      </tr>
+  
+                      <tr>
+                        <td>Notes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Phone</td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              {% assign last_address = signup.address.one_line %}
+              
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </body>
+  </html>
+  
